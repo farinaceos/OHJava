@@ -2,9 +2,8 @@ package projetofluxo;
 import java.util.Scanner;
 public class ProjetoFluxo {
     public static void main(String[] args) {
-     
-        
-        int numeroSecreto = 7;
+
+        int numeroSecreto = 9;
         
         
         
@@ -14,28 +13,35 @@ public class ProjetoFluxo {
         //FAZER UM JOGO DE ADIVINHACAO
         //O JOGO ACABA QUANDO A PESSOA ADIVINHA O NUMERO
         
-        
-       int palpite;
+        //ENQUANTO ... faça...
+       int palpite, vida;
        boolean continua;
-       //char escolhe;
-       //ENQUANTO continua for verdadeiro{
+       vida = 3;
+
        System.out.println("VOCÊ CONSEGUE ADIVINHAR O NUMERO SECRETO?");
-       
-       do{
+       continua = true;
+       while(continua==true){
+       System.out.println("Você tem "+ vida + " vidas");
        System.out.println("QUAL O SEU PALPITE??");
        palpite = ler.nextInt();
        if(palpite==numeroSecreto){
            System.out.println("Parabéns você ganhou O JOGO!");
            continua = false;
        }else{
+           vida--;
            System.out.println("Puxa vida. Não foi dessa vez");
-           continua = true;
-           //System.out.println("VOCÊ QUER CONTINUAR?  's' / 'n'");
-           //escolhe = (char) ler.nextByte();
+           if(vida==0){
+               System.out.println("Suas vidas acabaram.");
+               System.out.println("GAME OVER");
+               continua = false;
+           }else{
+           continua = true;    
+           }
+          
        }
-    }while(continua==true);
+    }
        
        System.out.println("Fim do código");
     }
-    //}
+
 }
